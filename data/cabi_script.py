@@ -1,9 +1,14 @@
-#open cabi stations file, read contents to list
+#=====================================
+#This script takes a csv with CaBi trips and a csv with the CaBi station locations
+#and names. It then joins the location data of the stations to the trips csv so 
+#that each row has coordinates for the start station and end station
+#=====================================
+
+#open cabi stations file, read contents to list. each line is an object in the list
 cabi_stations = open("Capital_Bike_Share_Locations.csv", "r")
 cabi_stations_list = cabi_stations.readlines()
 cabi_stations.close()
 
-print cabi_stations_list[1] + cabi_stations_list[2]
 #lists to contain the relevant info
 station_numbers = []
 station_lats = []
@@ -12,6 +17,7 @@ station_longs = []
 #extracts relevant info from cabi stations list, appends
 #each piece of info to its respective list
 for i in cabi_stations_list:
+    #splits each line, based on commas, into a new list
     i = i.split(",")
     station_numbers.append(i[3])
     station_lats.append(i[4])
@@ -43,8 +49,6 @@ for i in cabi_trips_list:
         for x in new_fields:
             i.append(x)
         counter += 1
-        
-        
     else:
         #finds the station numbers, then determines their coordinates
         #based on the earlier dictionaries
