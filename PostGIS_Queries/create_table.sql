@@ -1,3 +1,7 @@
+/*Query that creates the table to hold trip data. This query should be executed
+and then the file created with the python script (found in the data folder) 
+should be loaded into the table*/
+
 CREATE TABLE public.geo_bike_trips
 (
     duration numeric,
