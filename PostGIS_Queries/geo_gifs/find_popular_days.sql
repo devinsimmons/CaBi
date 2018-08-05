@@ -2,6 +2,8 @@
 I decided to use the most popular day for members (June 12th from my dataset) and the most popular day for casual users
 (June 16th) */
 
+create table trips_by_day
+as
 select 
 	member_type,
 	date_trunc('day', start_date) AS date_of_trip, 
