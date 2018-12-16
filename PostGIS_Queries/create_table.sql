@@ -19,7 +19,8 @@ CREATE TABLE public.geo_bike_trips
     end_lon numeric,
     start_geom geometry(Point,4326),
     end_geom geometry(Point,4326),
-    trip_line geometry(LineString,4326)
+    trip_line geometry(LineString,4326),
+    speed numeric
 )
 WITH (
     OIDS = FALSE
